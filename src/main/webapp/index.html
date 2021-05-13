@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Theatre</title>
+    <link rel="stylesheet" href="/resources/css/main.css">
+    <link rel="stylesheet" href="/resources/css/window-dialog.css">
+    <link rel="stylesheet" href="/resources/css/catalog-list.css">
+    <link rel="stylesheet" href="/resources/css/item-page.css">
+    <link rel="stylesheet" href="/resources/css/font-awesome.css">
+    <link rel="stylesheet" href="/resources/css/profile.css">
+</head>
+<body>
+<header>
+    <h1>
+        THEATRE
+        <div id="user" class="menu">
+            <div id="login">Guest</div>
+            <ul class="submenu" id="user-sidebar">
+                <li onclick="document.getElementById('login-form').style.display='block'">Log In</li>
+                <li onclick="document.getElementById('registration-form').style.display='block'">Sign Up</li>
+            </ul>
+        </div>
+    </h1>
+    <hr>
+    <nav>
+        <ul>
+            <li><a class="link" href="javascript: ContentManager.loadPageToUrl('/main')"> MAIN</a></li>
+            <li class="menu">
+                <a class="link">PLAYS</a>
+            </li>
+            <li>
+                <a class="link" name="/about" href="javascript: ContentManager. loadPageToUrl('/about')">ABOUT AUTHOR</a>
+            </li>
+        </ul>
+    </nav>
+
+</header>
+<div id="login-form" class="modal">
+  <span onclick="document.getElementById('login-form').style.display='none'"
+        class="close" title="Close Modal">&times;</span>
+
+    <!-- Modal Content -->
+    <form class="modal-content animate" id="auth-form">
+        <div class="container">
+            <h1>Log In</h1>
+
+            <input type="text" placeholder="Input login" name="login" required><br>
+            <input type="password" placeholder="Input password" name="password" required><br>
+            <label id="login-msg" class="msg"></label>
+            <button type="button" id="login-button" onclick="logInUser()">Log In</button>
+        </div>
+    </form>
+</div>
+<div id="registration-form" class="modal">
+  <span onclick="document.getElementById('registration-form').style.display='none'"
+        class="close" title="Close Modal">&times;</span>
+
+    <form class="modal-content animate" method="POST" id="reg-form">
+        <div class="container">
+            <h1>Registration</h1>
+
+            <input type="text" placeholder="Input login" name="login" required><br>
+            <input type="password" placeholder="Input password" name="password" required><br>
+            <input type="password" placeholder="Confirm password" name="retryPassword" required><br>
+            <input type="text" placeholder="Input email" name="email" required><br>
+            <input type="text" placeholder="Input full name" name="fullName" required><br>
+            <input type="number" placeholder="Input phone" name="phone" required><br>
+            <label class="msg"></label>
+            <button type="button"  id="reg-button" onclick="signUpUser()">SIGN UP</button>
+        </div>
+    </form>
+</div>
+<div class="wrapper-content">
+    <div id="wrapper">
+        <content>
+            <div class="title-block">
+                <h1>Play list</h1>
+            </div>
+            <div id="catalog-auto">
+                <div class="car-item">
+                    <span id="1"></span>
+                    <div class="title">Do not leave me …</div>
+                    <div class="item-content">
+                        <div class="column">
+                            <div class="label">Author: A. Dudarau</div>
+                            <div class="label">Genre: Dramatic ballad</div>
+                        </div>
+                        <div class="column">
+                            <div class="label date">12.02</div>
+                            <div class="label date">24.02</div>
+                            <div class="label date">28.02</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </content>
+    </div>
+    <div class="empty-line">
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div id="about">
+                © Роман Мойсейков ИТП-41<br>2020 г. <a href="https://www.gstu.by/">gstu.by</a>
+            </div>
+            <div id="time">
+            </div>
+        </div>
+    </footer>
+</div>
+<script type="text/javascript" src="resources/js/main.js"></script>
+</body>
+</html>
